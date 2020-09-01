@@ -1,0 +1,4 @@
+GET_RELATIONSHIP Vich Siblings
+GET_RELATIONSHIP Kriya Paternal-Aunt
+GET_RELATIONSHIP Laki Maternal-Uncle
+GET_RELATIONSHIP Laki Maternal-Aunt
