@@ -47,8 +47,8 @@
 			$this->setChild('satya', 'vyas', PERSON::MALE);
 			$this->setChild('satya', 'atya', PERSON::FEMALE);
 
-			$this->setSpouse('jaya', 'dirtha');
-			$this->setChild('dirtha', 'yodhan', PERSON::MALE);
+			$this->setSpouse('jaya', 'dritha');
+			$this->setChild('dritha', 'yodhan', PERSON::MALE);
 
 			$this->setSpouse('arit', 'jnki');
 			$this->setChild('jnki', 'laki', PERSON::MALE);

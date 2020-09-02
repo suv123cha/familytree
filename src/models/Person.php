@@ -23,8 +23,8 @@
 		{
 			$husband = trim(strtolower($husband));
 			$wife = trim(strtolower($wife));
-			$this->spouseOf[$wife] = ['name' => $husband, 'gender' => "male"];
-			$this->spouseOf[$husband] = ['name' => $wife, 'gender' => "female"];
+			$this->spouseOf[$wife] = ['name' => $husband, 'gender' => self::MALE];
+			$this->spouseOf[$husband] = ['name' => $wife, 'gender' => self::FEMALE];
 			return 1;
 		}
 
@@ -52,7 +52,6 @@
 			{
 				return -1;
 			}
-
 
 			$child = trim(strtolower($child));
 			$gender = trim(strtolower($gender));
