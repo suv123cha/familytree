@@ -7,6 +7,23 @@
 			parent::__construct();
 		}
 
+
+		function addChild($parent, $name, $gender)
+		{
+			$spouse = $this->getSpouse($parent);
+			if($spouse == "female")
+			{
+				return 0;
+			}
+
+			if(!isset($this->parentOf[$name]))
+			{
+				return -1;
+			}
+			return $this->setChild($parent, $name, $gender);
+		}
+
+
 		/**
 		 * [getSiblings This function fetches all the siblings of the child]
 		 * @param  [string] $name [Holds the name of the child]
@@ -183,13 +200,7 @@
 			$name = trim(strtolower($name));
 			$parents = $this->getParents($name);
 			$all_siblings =  $this->getSiblings($parents["father"]["name"]);
-			$spouse = [];
-			foreach ($all_siblings as $sibs) 
-			{
-				array_push($spouse, $this->getSpouse($sibs["name"]));
-			}
-
-			return array_filter($spouse, function ($child) 
+			return array_filter($all_siblings, function ($child) 
 			{
 				return $child['gender'] == PERSON::FEMALE;
 			});
@@ -221,13 +232,7 @@
 			$name = trim(strtolower($name));
 			$parents = $this->getParents($name);
 			$all_siblings =  $this->getSiblings($parents["mother"]);
-			$spouse = [];
-			foreach ($all_siblings as $sibs) 
-			{
-				array_push($spouse, $this->getSpouse($sibs["name"]));
-			}
-
-			return array_filter($spouse, function ($child) 
+			return array_filter($all_siblings, function ($child) 
 			{
 				return $child['gender'] == PERSON::FEMALE;
 			});

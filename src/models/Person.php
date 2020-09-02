@@ -29,6 +29,7 @@
 		}
 
 
+
 		/**
 		 * [addChild This function is used for adding child]
 		 * 
@@ -41,6 +42,18 @@
 		function setChild($parent, $child, $gender) 
 		{
 			$parent = trim(strtolower($parent));
+			$spouse = $this->getSpouse($parent);
+			if($spouse["gender"] == PERSON::FEMALE)
+			{
+				return 0;
+			}
+
+			if(!isset($this->spouseOf[$parent]))
+			{
+				return -1;
+			}
+
+
 			$child = trim(strtolower($child));
 			$gender = trim(strtolower($gender));
 
@@ -51,7 +64,7 @@
 
 			$this->childOf[$parent][] = ['name' => $child, 'gender' => $gender];
 			$this->parentOf[$child] = ['mother' => $parent, 'father' => $this->spouseOf[$parent]];
-			return 1;
+			return 1;	
 		}
 
 

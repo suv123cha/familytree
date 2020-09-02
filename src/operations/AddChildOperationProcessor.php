@@ -15,7 +15,7 @@
 		public function processData($family, $parent, $child, $gender)
 		{
 			$response = $family->setChild($parent, $child, $gender);
-			$send = ($response) ? "CHILD_ADDED_SUCCESS" : "CHILD_ADDITION_FAILED";
+			$send = ($response > 0) ? "CHILD_ADDITION_SUCCEEDED" : (($response == -1)  ? "PERSON_NOT_FOUND" : "CHILD_ADDITION_FAILED");
 			return $send . "\n";
 		}
 	}  

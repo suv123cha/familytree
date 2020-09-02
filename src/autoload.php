@@ -1,5 +1,5 @@
 <?php  
-
+	//error_reporting(0);
 	include 'models/FamilyTree.php';
 	include 'models/Person.php';
 	include 'models/Relationship.php';

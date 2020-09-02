@@ -68,17 +68,13 @@
 		public static function organise($relData)
 		{
 			$strResponse = "";
-			if($relData == 0)
+			if($relData == 0 || empty($relData))
 			{
 				$strResponse = "NONE";
 			}
 			elseif ($relData == -1) 
 			{
 				$strResponse = "PERSON NOT FOUND";
-			}
-			else if(empty($relData))
-			{
-				$strResponse = "NOT FOUND";
 			}
 			else
 			{
